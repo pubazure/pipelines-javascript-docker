@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: pubazurepipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pubazurepipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: pubazurepipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: pubazurepipelinesjavascriptdocker 
+          image: pubaksdevopsacr.azurecr.io/pubazurepipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
